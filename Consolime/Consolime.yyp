@@ -22,8 +22,11 @@
   },
   "name":"Consolime",
   "resources":[
+    {"id":{"name":"sys_Consolime","path":"objects/sys_Consolime/sys_Consolime.yy",},},
     {"id":{"name":"rm_Home","path":"rooms/rm_Home/rm_Home.yy",},},
+    {"id":{"name":"ctor_ConsolimeException","path":"scripts/ctor_ConsolimeException/ctor_ConsolimeException.yy",},},
     {"id":{"name":"ctor_ConsolimeProcess","path":"scripts/ctor_ConsolimeProcess/ctor_ConsolimeProcess.yy",},},
+    {"id":{"name":"funcs_Consolime","path":"scripts/funcs_Consolime/funcs_Consolime.yy",},},
     {"id":{"name":"macros_Consolime","path":"scripts/macros_Consolime/macros_Consolime.yy",},},
   ],
   "resourceType":"GMProject",
