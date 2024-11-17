@@ -1,0 +1,1 @@
+consolime_clear();

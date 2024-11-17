@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"funcs_Consolime",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"funcs_Consolime",
+  "parent":{
+    "name":"Consolime",
+    "path":"folders/_Packages/Alphish/Consolime.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
