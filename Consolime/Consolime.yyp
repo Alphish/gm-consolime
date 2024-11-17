@@ -9,7 +9,11 @@
     "name":"Default",
   },
   "defaultScriptType":1,
-  "Folders":[],
+  "Folders":[
+    {"$GMFolder":"","%Name":"_Packages","folderPath":"folders/_Packages.yy","name":"_Packages","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Alphish","folderPath":"folders/_Packages/Alphish.yy","name":"Alphish","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Consolime","folderPath":"folders/_Packages/Alphish/Consolime.yy","name":"Consolime","resourceType":"GMFolder","resourceVersion":"2.0",},
+  ],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
@@ -19,6 +23,8 @@
   "name":"Consolime",
   "resources":[
     {"id":{"name":"rm_Home","path":"rooms/rm_Home/rm_Home.yy",},},
+    {"id":{"name":"ctor_ConsolimeProcess","path":"scripts/ctor_ConsolimeProcess/ctor_ConsolimeProcess.yy",},},
+    {"id":{"name":"macros_Consolime","path":"scripts/macros_Consolime/macros_Consolime.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
