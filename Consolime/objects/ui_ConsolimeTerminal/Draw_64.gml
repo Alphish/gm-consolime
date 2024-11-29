@@ -1,7 +1,4 @@
-var _start_index = max(array_length(view.rows) - view.visible_rows, 0);
-if (!is_undefined(view.reference_row))
-    _start_index = array_get_index(view.rows, view.reference_row);
-
+var _start_index = view.get_reference_index();
 var _end_index = min(_start_index + view.visible_rows, array_length(view.rows));
 
 for (var i = _start_index; i < _end_index; i++) {

@@ -49,7 +49,7 @@ function ConsolimeTerminalView(_process, _visible_columns, _visible_rows) constr
         oid_from = _process_oid_from;
         oid_to = _process_oid_to;
         
-        if (!is_undefined(reference_row) && reference_row.oid < oid_from) {
+        if (!is_undefined(reference_row) && reference_row.output.oid < oid_from) {
             reference_row = array_first(rows);
         }
     }
@@ -60,5 +60,20 @@ function ConsolimeTerminalView(_process, _visible_columns, _visible_rows) constr
             var _row_content = string_copy(_output.text, i * visible_columns + 1, visible_columns);
             array_push(rows, new ConsolimeTerminalRow(_output, _row_content, i));
         }
+    }
+    
+    static get_reference_index = function() {
+        if (is_undefined(reference_row))
+            return max(array_length(rows) - visible_rows, 0);
+        else
+            return array_get_index(rows, reference_row);
+    }
+    
+    static scroll_by = function(_rows) {
+        var _min_index = 0;
+        var _max_index = max(array_length(rows) - visible_rows, 0);
+        var _current_index = get_reference_index();
+        var _target_index = clamp(_current_index + _rows, _min_index, _max_index);
+        reference_row = _target_index == _max_index ? undefined : rows[_target_index];
     }
 }
