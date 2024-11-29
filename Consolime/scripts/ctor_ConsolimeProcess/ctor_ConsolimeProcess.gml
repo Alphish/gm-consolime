@@ -3,7 +3,8 @@ function ConsolimeProcess() constructor {
     debug_output_enabled = false;
     debug_filter = undefined;
     
-    output = [];
+    outputs = [];
+    next_oid = 0;
     
     // -----
     // Setup
@@ -11,9 +12,9 @@ function ConsolimeProcess() constructor {
     
     static with_output_capacity = function(_capacity) {
         output_capacity = _capacity;
-        var _overflow = array_length(output) - output_capacity;
+        var _overflow = array_length(outputs) - output_capacity;
         if (_overflow > 0)
-            array_delete(output, 0, _overflow);
+            array_delete(outputs, 0, _overflow);
         
         return self;
     }
@@ -45,7 +46,7 @@ function ConsolimeProcess() constructor {
     // Clearing
     
     static clear = function() {
-        array_resize(output, 0);
+        array_resize(outputs, 0);
     }
     
     // Basic printing
@@ -56,12 +57,11 @@ function ConsolimeProcess() constructor {
     }
     
     static print_ext = function(_type, _text, _args) {
-        static newline_sequences = ["\r\n", "\r", "\n"];
+        static text_lines = [""];
         
         _type = string_upper(_type);
-        var _resolved_text = is_undefined(_args) || array_length(_args) == 0 ? string(_text) : string_ext(_text, _args);
-        var _lines = string_split_ext(_resolved_text, newline_sequences);
-        print_many_ext(_type, _lines);
+        text_lines[0] = is_undefined(_args) || array_length(_args) == 0 ? string(_text) : string_ext(_text, _args);
+        print_many_ext(_type, text_lines);
         
         return undefined;
     }
@@ -72,19 +72,41 @@ function ConsolimeProcess() constructor {
     }
     
     static print_many_ext = function(_type, _lines) {
+        _lines = flatten_lines(_lines);
+        
         var _should_debug = debug_output_enabled && (is_undefined(debug_filter) || debug_filter[$ _type] == true);
         var _indent = string_repeat(" ", string_length(_type));
         for (var i = 0, _count = array_length(_lines); i < _count; i++) {
             var _line = _lines[i];
-            array_push(output, { type: _type, text: _line, line: i });
+            array_push(outputs, new ConsolimeOutput(_type, _line, i, next_oid++));
             
             if (_should_debug)
                 show_debug_message(i == 0 ? $"{_type}: {_line}" : $"{_indent}  {_line}");
         }
         
-        var _overflow = array_length(output) - output_capacity;
+        var _overflow = array_length(outputs) - output_capacity;
         if (_overflow > 0)
-            array_delete(output, 0, _overflow);
+            array_delete(outputs, 0, _overflow);
+    }
+    
+    static flatten_lines = function(_lines) {
+        static newline_sequences = ["\r\n", "\r", "\n"];
+        static result = [];
+        
+        array_resize(result, 0);
+        for (var i = 0; i < array_length(_lines); i++) {
+            var _line = string_trim_end(_lines[i], newline_sequences);
+            if (string_pos("\r", _line) == 0 && string_pos("\n", _line) == 0) {
+                array_push(result, _line);
+                continue;
+            }
+            
+            var _split = string_split_ext(_line, newline_sequences);
+            for (var j = 0; j < array_length(_split); j++) {
+                array_push(result, _split[j]);
+            }
+        }
+        return result;
     }
     
     // Tracing
