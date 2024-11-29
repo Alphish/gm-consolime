@@ -1,4 +1,6 @@
-function ConsolimeProcess() constructor {
+function ConsolimeProcess(_environment) constructor {
+    environment = _environment;
+    
     output_capacity = 1000;
     debug_output_enabled = false;
     debug_filter = undefined;
@@ -207,5 +209,13 @@ function ConsolimeProcess() constructor {
     
     static error_many_ext = function(_lines) {
         print_many_ext("ERROR", _lines);
+    }
+    
+    // --------
+    // Commands
+    // --------
+    
+    static execute_command = function(_command) {
+        environment.execute_command(self, _command);
     }
 }

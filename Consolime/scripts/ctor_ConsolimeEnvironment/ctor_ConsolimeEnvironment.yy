@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ctor_ConsolimeEnvironment",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ctor_ConsolimeEnvironment",
+  "parent":{
+    "name":"Process",
+    "path":"folders/_Packages/Alphish/Consolime/Process.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
