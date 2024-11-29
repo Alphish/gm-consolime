@@ -23,6 +23,7 @@
   },
   "name":"Consolime",
   "resources":[
+    {"id":{"name":"fnt_ConsolimeText","path":"fonts/fnt_ConsolimeText/fnt_ConsolimeText.yy",},},
     {"id":{"name":"obj_ConsolimeTest","path":"objects/obj_ConsolimeTest/obj_ConsolimeTest.yy",},},
     {"id":{"name":"sys_Consolime","path":"objects/sys_Consolime/sys_Consolime.yy",},},
     {"id":{"name":"rm_Home","path":"rooms/rm_Home/rm_Home.yy",},},
