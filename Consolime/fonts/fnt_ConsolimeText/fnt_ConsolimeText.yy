@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"fnt_ConsolimeText",
   "parent":{
-    "name":"Consolime",
-    "path":"folders/_Packages/Alphish/Consolime.yy",
+    "name":"Terminal",
+    "path":"folders/_Packages/Alphish/Consolime/Terminal.yy",
   },
   "pointRounding":0,
   "ranges":[

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ctor_ConsolimeTerminalView",
   "parent":{
-    "name":"Consolime",
-    "path":"folders/_Packages/Alphish/Consolime.yy",
+    "name":"Terminal",
+    "path":"folders/_Packages/Alphish/Consolime/Terminal.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

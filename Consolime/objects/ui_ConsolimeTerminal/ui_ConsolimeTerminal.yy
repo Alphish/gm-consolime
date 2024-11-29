@@ -12,8 +12,8 @@
   "name":"ui_ConsolimeTerminal",
   "overriddenProperties":[],
   "parent":{
-    "name":"Consolime",
-    "path":"folders/_Packages/Alphish/Consolime.yy",
+    "name":"Terminal",
+    "path":"folders/_Packages/Alphish/Consolime/Terminal.yy",
   },
   "parentObjectId":null,
   "persistent":false,
