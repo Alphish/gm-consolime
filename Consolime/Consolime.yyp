@@ -30,6 +30,8 @@
     {"id":{"name":"ctor_ConsolimeException","path":"scripts/ctor_ConsolimeException/ctor_ConsolimeException.yy",},},
     {"id":{"name":"ctor_ConsolimeOutput","path":"scripts/ctor_ConsolimeOutput/ctor_ConsolimeOutput.yy",},},
     {"id":{"name":"ctor_ConsolimeProcess","path":"scripts/ctor_ConsolimeProcess/ctor_ConsolimeProcess.yy",},},
+    {"id":{"name":"ctor_ConsolimeTerminalRow","path":"scripts/ctor_ConsolimeTerminalRow/ctor_ConsolimeTerminalRow.yy",},},
+    {"id":{"name":"ctor_ConsolimeTerminalView","path":"scripts/ctor_ConsolimeTerminalView/ctor_ConsolimeTerminalView.yy",},},
     {"id":{"name":"funcs_Consolime","path":"scripts/funcs_Consolime/funcs_Consolime.yy",},},
     {"id":{"name":"macros_Consolime","path":"scripts/macros_Consolime/macros_Consolime.yy",},},
   ],
