@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ctor_ConsolimeProcess",
   "parent":{
-    "name":"Consolime",
-    "path":"folders/_Packages/Alphish/Consolime.yy",
+    "name":"Process",
+    "path":"folders/_Packages/Alphish/Consolime/Process.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

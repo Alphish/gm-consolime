@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ctor_TestEnvironment",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ctor_TestEnvironment",
+  "parent":{
+    "name":"Demo",
+    "path":"folders/Demo.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

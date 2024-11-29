@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ctor_ConsolimeOutput",
+  "%Name":"ctor_ConsolimeProgram",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ctor_ConsolimeOutput",
+  "name":"ctor_ConsolimeProgram",
   "parent":{
     "name":"Process",
     "path":"folders/_Packages/Alphish/Consolime/Process.yy",
