@@ -38,6 +38,8 @@
     {"id":{"name":"ctor_ConsolimeProgram","path":"scripts/ctor_ConsolimeProgram/ctor_ConsolimeProgram.yy",},},
     {"id":{"name":"ctor_ConsolimeTerminalRow","path":"scripts/ctor_ConsolimeTerminalRow/ctor_ConsolimeTerminalRow.yy",},},
     {"id":{"name":"ctor_ConsolimeTerminalView","path":"scripts/ctor_ConsolimeTerminalView/ctor_ConsolimeTerminalView.yy",},},
+    {"id":{"name":"ctor_TestConsoleProgram","path":"scripts/ctor_TestConsoleProgram/ctor_TestConsoleProgram.yy",},},
+    {"id":{"name":"ctor_TestEnvironment","path":"scripts/ctor_TestEnvironment/ctor_TestEnvironment.yy",},},
     {"id":{"name":"funcs_Consolime","path":"scripts/funcs_Consolime/funcs_Consolime.yy",},},
     {"id":{"name":"macros_Consolime","path":"scripts/macros_Consolime/macros_Consolime.yy",},},
   ],
