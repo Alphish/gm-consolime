@@ -34,6 +34,8 @@
     {"$GMObjectProperty":"v1","%Name":"text_font","filters":[
         "GMFont",
       ],"listItems":[],"multiselect":false,"name":"text_font","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"fnt_ConsolimeText","path":"fonts/fnt_ConsolimeText/fnt_ConsolimeText.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"fnt_ConsolimeText","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"bg_color","filters":[],"listItems":[],"multiselect":false,"name":"bg_color","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FF000000","varType":7,},
+    {"$GMObjectProperty":"v1","%Name":"bg_alpha","filters":[],"listItems":[],"multiselect":false,"name":"bg_alpha","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.75","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"line_height","filters":[],"listItems":[],"multiselect":false,"name":"line_height","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"padding_left","filters":[],"listItems":[],"multiselect":false,"name":"padding_left","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"padding_top","filters":[],"listItems":[],"multiselect":false,"name":"padding_top","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":0,},
