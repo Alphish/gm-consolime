@@ -16,6 +16,7 @@ graphics_by_type = {
     WARNING: { color: #FFC000 },
     ERROR: { color: #FF4000 },
 };
+more_rows_graphics = { color: c_gray };
 
 view_column_width = undefined;
 view_row_height = undefined;
