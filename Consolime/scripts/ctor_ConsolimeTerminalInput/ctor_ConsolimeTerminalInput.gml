@@ -1,10 +1,12 @@
 function ConsolimeTerminalInput(_terminal) constructor {
     terminal = _terminal;
     process = terminal.process;
+    
     text = "";
     insert_position = 0;
     keyboard_string = ""; // clean up the keyboard_string from earlier
     max_length = 256;
+    history_index = 0;
     
     // handling the underscore "blinking" at the current input position
     blink = 0;
@@ -79,6 +81,7 @@ function ConsolimeTerminalInput(_terminal) constructor {
             process.execute_command(text);
             terminal.view.reference_row = undefined;
             text = "";
+            history_index = 0;
         }
     }
     
@@ -123,9 +126,18 @@ function ConsolimeTerminalInput(_terminal) constructor {
     static get_display_text = function() {
         if (string_length(text) >= max_length)
             return text;
-        else if (blink < blink_max div 2)
-            return text + "_";
         else
             return text + " ";
+    }
+    
+    static navigate_history = function(_direction) {
+        var _index = history_index + _direction;
+        var _input = process.get_historical_input(_index);
+        if (is_undefined(_input))
+            return;
+        
+        text = _input;
+        insert_position = string_length(text);
+        history_index = _index;
     }
 }

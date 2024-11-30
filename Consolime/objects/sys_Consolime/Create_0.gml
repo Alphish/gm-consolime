@@ -7,7 +7,9 @@ if (!is_undefined(main_environment)) {
     var _environment = is_callable(main_environment) ? new main_environment() : main_environment;
     
     var _process = new ConsolimeProcess(_environment);
-    _process.with_output_capacity(main_output_capacity);
+    _process.with_output_capacity(main_output_capacity)
+        .with_history_capacity(main_history_capacity);
+    
     if (main_debug_output_enabled)
         _process.with_debug_output(main_debug_filter);
     else
