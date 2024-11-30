@@ -14,5 +14,11 @@ if (keyboard_check_pressed(vk_pageup))
 if (keyboard_check_pressed(vk_pagedown))
     view.scroll_by(view.visible_rows);
 
+if (keyboard_check_pressed(vk_home))
+    view.scroll_by(-array_length(view.rows));
+
+if (keyboard_check_pressed(vk_end))
+    view.scroll_by(array_length(view.rows));
+
 input.process_input();
 view.calculate_input_rows(input.get_display_text());
