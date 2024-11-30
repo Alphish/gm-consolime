@@ -1,22 +1,33 @@
 function ConsolimeProcess(_environment) constructor {
     environment = _environment;
     
-    output_capacity = 1000;
+    outputs_capacity = 1000;
+    inputs_history_capacity = 100;
     debug_output_enabled = false;
     debug_filter = undefined;
     
     outputs = [];
     next_oid = 0;
+    inputs_history = [];
     
     // -----
     // Setup
     // -----
     
     static with_output_capacity = function(_capacity) {
-        output_capacity = _capacity;
-        var _overflow = array_length(outputs) - output_capacity;
+        outputs_capacity = _capacity;
+        var _overflow = array_length(outputs) - outputs_capacity;
         if (_overflow > 0)
             array_delete(outputs, 0, _overflow);
+        
+        return self;
+    }
+    
+    static with_history_capacity = function(_capacity) {
+        inputs_history_capacity = _capacity;
+        var _overflow = array_length(inputs_history) - inputs_history_capacity;
+        if (_overflow > 0)
+            array_delete(inputs_history, 0, _overflow);
         
         return self;
     }
@@ -49,6 +60,7 @@ function ConsolimeProcess(_environment) constructor {
     
     static clear = function() {
         array_resize(outputs, 0);
+        array_resize(inputs_history, 0);
     }
     
     // Basic printing
@@ -86,7 +98,7 @@ function ConsolimeProcess(_environment) constructor {
                 show_debug_message(i == 0 ? $"{_type}: {_line}" : $"{_indent}  {_line}");
         }
         
-        var _overflow = array_length(outputs) - output_capacity;
+        var _overflow = array_length(outputs) - outputs_capacity;
         if (_overflow > 0)
             array_delete(outputs, 0, _overflow);
     }
@@ -217,5 +229,22 @@ function ConsolimeProcess(_environment) constructor {
     
     static execute_command = function(_command) {
         environment.execute_command(self, _command);
+    }
+    
+    static record_input = function(_input) {
+        var _existing_index = array_get_index(inputs_history, _input);
+        if (_existing_index >= 0)
+            array_delete(inputs_history, _existing_index, 1);
+        
+        array_push(inputs_history, _input);
+        if (array_length(inputs_history) > inputs_history_capacity)
+            array_shift(inputs_history);
+    }
+    
+    static get_historical_input = function(_index) {
+        if (_index < 1 || _index > array_length(inputs_history))
+            return undefined;
+        else
+            return inputs_history[array_length(inputs_history) - _index];
     }
 }

@@ -6,6 +6,7 @@ function ConsolimeTerminalView(_process, _visible_columns, _visible_rows) constr
     oid_from = 0;
     oid_to = 0;
     rows = [];
+    input_rows = 1;
     
     reference_row = undefined;
     
@@ -62,16 +63,20 @@ function ConsolimeTerminalView(_process, _visible_columns, _visible_rows) constr
         }
     }
     
+    static calculate_input_rows = function(_text) {
+        input_rows = ceil(string_length(_text) / visible_columns);
+    }
+    
     static get_reference_index = function() {
         if (is_undefined(reference_row))
-            return max(array_length(rows) - visible_rows, 0);
+            return max(array_length(rows) - (visible_rows - input_rows), 0);
         else
             return array_get_index(rows, reference_row);
     }
     
     static scroll_by = function(_rows) {
         var _min_index = 0;
-        var _max_index = max(array_length(rows) - visible_rows, 0);
+        var _max_index = max(array_length(rows) - (visible_rows - input_rows), 0);
         var _current_index = get_reference_index();
         var _target_index = clamp(_current_index + _rows, _min_index, _max_index);
         reference_row = _target_index == _max_index ? undefined : rows[_target_index];

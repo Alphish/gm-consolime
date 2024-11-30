@@ -1,4 +1,5 @@
 process = consolime_get_process(process_name);
+input = new ConsolimeTerminalInput(id);
 
 terminal_width = display_get_gui_width();
 terminal_height = display_get_gui_height();
@@ -16,6 +17,7 @@ graphics_by_type = {
     WARNING: { color: #FFC000 },
     ERROR: { color: #FF4000 },
 };
+more_rows_graphics = { color: c_gray };
 
 view_column_width = undefined;
 view_row_height = undefined;
