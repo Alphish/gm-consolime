@@ -1,3 +1,6 @@
+if (instance_exists(ui_ConsolimeTerminal))
+    return;
+
 try {
     var _apples_count = 42;
     var _display_apples = _apples_count + " apples";
