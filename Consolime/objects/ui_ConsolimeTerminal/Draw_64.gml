@@ -1,3 +1,7 @@
+// ------------------
+// Drawing background
+// ------------------
+
 draw_set_color(bg_color);
 draw_set_alpha(bg_alpha);
 draw_rectangle(0, 0, terminal_width, terminal_height, false);
@@ -5,6 +9,10 @@ draw_rectangle(0, 0, terminal_width, terminal_height, false);
 var _total_rows = array_length(view.rows);
 var _start_index = view.get_reference_index();
 var _end_index = min(_start_index + (view.visible_rows - view.input_rows), _total_rows);
+
+// ---------------
+// Drawing outputs
+// ---------------
 
 draw_set_font(text_font);
 draw_set_halign(fa_left);
@@ -26,6 +34,10 @@ for (var i = _start_index; i < _end_index; i++) {
     draw_text(_xx, _yy, _content);
 }
 
+// -------------
+// Drawing input
+// -------------
+
 var _input_yoffset = (_end_index - _start_index) * view_row_height;
 var _input_text = input.get_display_text();
 var _input_graphics = graphics_by_type[$ "COMMAND"] ?? default_graphics;
@@ -38,6 +50,20 @@ for (var i = 0; i < view.input_rows; i++) {
     var _content = string_copy(_input_text, view.visible_columns * i + 1, view.visible_columns * (i + 1));
     draw_text(_xx, _yy, _content);
 }
+
+if (input.blink < input.blink_max div 2) {
+    var _row = input.insert_position div view.visible_columns;
+    var _column = input.insert_position mod view.visible_columns;
+    
+    var _xx = padding_left;
+    var _yy = padding_top + _input_yoffset + _row * view_row_height + view_row_height div 2;
+    var _content = string_repeat(" ", _column) + "_";
+    draw_text(_xx, _yy, _content);
+}
+
+// -----
+// Reset
+// -----
 
 draw_set_color(c_white);
 draw_set_alpha(1);
