@@ -1,4 +1,5 @@
 process = consolime_get_process(process_name);
+input = new ConsolimeTerminalInput(id);
 
 terminal_width = display_get_gui_width();
 terminal_height = display_get_gui_height();

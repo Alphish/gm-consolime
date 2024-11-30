@@ -9,3 +9,6 @@ if (keyboard_check_pressed(vk_pageup))
 
 if (keyboard_check_pressed(vk_pagedown))
     view.scroll_by(view.visible_rows);
+
+input.process_input();
+view.calculate_input_rows(input.get_display_text());
