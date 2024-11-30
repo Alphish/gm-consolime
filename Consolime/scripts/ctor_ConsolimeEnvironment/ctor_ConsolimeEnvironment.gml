@@ -18,8 +18,16 @@ function ConsolimeEnvironment() constructor {
         _process.print("COMMAND", _command);
         
         var _args = parse_command_arguments(_command);
+        if (array_length(_args) == 0)
+            return;
+        
         var _program_name = array_shift(_args);
         var _program = programs_by_name[$ _program_name];
+        if (is_undefined(_program)) {
+            _process.error($"Unknown program name: '{_program_name}'.");
+            return;
+        }
+        
         try {
             _program.execute(_args, _process);
         } catch (_error) {
