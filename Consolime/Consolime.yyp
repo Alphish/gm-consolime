@@ -36,6 +36,7 @@
     {"id":{"name":"ctor_ConsolimeOutput","path":"scripts/ctor_ConsolimeOutput/ctor_ConsolimeOutput.yy",},},
     {"id":{"name":"ctor_ConsolimeProcess","path":"scripts/ctor_ConsolimeProcess/ctor_ConsolimeProcess.yy",},},
     {"id":{"name":"ctor_ConsolimeProgram","path":"scripts/ctor_ConsolimeProgram/ctor_ConsolimeProgram.yy",},},
+    {"id":{"name":"ctor_ConsolimeTerminalInput","path":"scripts/ctor_ConsolimeTerminalInput/ctor_ConsolimeTerminalInput.yy",},},
     {"id":{"name":"ctor_ConsolimeTerminalRow","path":"scripts/ctor_ConsolimeTerminalRow/ctor_ConsolimeTerminalRow.yy",},},
     {"id":{"name":"ctor_ConsolimeTerminalView","path":"scripts/ctor_ConsolimeTerminalView/ctor_ConsolimeTerminalView.yy",},},
     {"id":{"name":"ctor_TestConsoleProgram","path":"scripts/ctor_TestConsoleProgram/ctor_TestConsoleProgram.yy",},},

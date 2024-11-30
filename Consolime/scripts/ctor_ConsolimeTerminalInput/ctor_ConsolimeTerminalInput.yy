@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ctor_ConsolimeTerminalInput",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ctor_ConsolimeTerminalInput",
+  "parent":{
+    "name":"Terminal",
+    "path":"folders/_Packages/Alphish/Consolime/Terminal.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
